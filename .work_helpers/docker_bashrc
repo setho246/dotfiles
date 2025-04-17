@@ -1,0 +1,15 @@
+export PS1="\u@${WODBY_APP_NAME:-php}.${WODBY_ENVIRONMENT_NAME:-container}:\w $ "
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/wodby/.composer/vendor/bin:/var/www/html/vendor/bin:/var/www/html/bin
+
+# Setup live history writing
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+alias debug_on='export XDEBUG_CONFIG="idekey=my-ide"'
+alias debug_off='unset XDEBUG_CONFIG'
+alias cs='composer csf; composer cs'
+alias pvi='sudo apk add pv'
+
+dim() {
+    drush sql-drop -y; pv $1 | drush sql-cli; drush uli
+}

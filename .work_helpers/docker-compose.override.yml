@@ -1,0 +1,17 @@
+services:
+  mariadb:
+    ports:
+      - "3306:3306"
+
+  php:
+    environment:
+      PHP_EXTENSIONS_DISABLE: ''
+      PHP_XDEBUG: 1
+      PHP_XDEBUG_MODE: debug
+      PHP_IDE_CONFIG: serverName=my-ide
+      PHP_XDEBUG_IDEKEY: "my-ide"
+      PHP_XDEBUG_LOG: /tmp/php-xdebug.log
+      PHP_XDEBUG_CLIENT_HOST: 172.17.0.1 # Linux
+    volumes:
+      - ~/.work_helpers/docker_bash_history:/home/wodby/.bash_history
+      - ~/.work_helpers/docker_bashrc:/home/wodby/.bashrc

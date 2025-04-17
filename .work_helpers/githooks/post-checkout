@@ -1,0 +1,18 @@
+#/bin/bash
+OLD_HEAD=$1
+NEW_HEAD=$2
+CHECKOUT_REASON=$3
+
+BRANCH_NUM=$(git rev-parse --abbrev-ref HEAD | awk 'match($0, /[0-9]+/) {print substr($0, RSTART, RLENGTH)}')
+PROJ_SLUG=$(git remote -v | awk '{for(i=1; i<=NF; i++) if ($i ~ /\.git$/) {match($i, /[:\/]([^:\/]+\/[^:\/]+)\.git$/, arr); print arr[1]; exit}}')
+
+if [ "$CHECKOUT_REASON" -eq 0 ]; then
+    exit 0
+fi
+if [ -z "$BRANCH_NUM" ]; then
+    echo "Emptying committemplate.txt"
+    echo "Warning! You're on the \"$BRANCH_NAME\" branch. Only commit work in this branch if absolutely necessary." > .git/committemplate.txt
+else
+    echo "New template: $PROJ_SLUG#$BRANCH_NUM - "
+    echo "$PROJ_SLUG#$BRANCH_NUM - " > .git/committemplate.txt
+fi
