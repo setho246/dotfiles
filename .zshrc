@@ -114,3 +114,4 @@ alias ctop='TERM="${TERM/#tmux/screen}" ctop'
 alias wodjs="docker run --rm -v $HOME/.ssh/:/home/node/.ssh -v ./mariadb-init:/usr/src/app/mariadb-init -u 1000:1000 -it eopts_dockby"
 
 export IDEA_JDK=/usr/lib/jvm/jdk-jetbrains
+export PATH="/opt/homebrew/bin:$PATH"
