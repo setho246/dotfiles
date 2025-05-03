@@ -1,0 +1,7 @@
+[user]
+	email = seth.hilder@eightyoptions.com
+	name = Seth Hilder
+[core]
+	hooksPath = ~/.work_helpers/githooks
+[commit]
+	template = .git/committemplate.txt

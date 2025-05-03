@@ -1,9 +1,8 @@
 [user]
-	email = seth.hilder@eightyoptions.com
+	email = setho246@gmail.com
 	name = Seth Hilder
 [alias]
     gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
-[core]
-	hooksPath = ~/.work_helpers/githooks
-[commit]
-	template = .git/committemplate.txt
+
+[includeIf "gitdir:**/eopts/**"]
+	path = ~/.config/git/config.eopts
