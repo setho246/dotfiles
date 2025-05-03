@@ -1,13 +1,6 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation.
 export ZSH="$HOME/.config/oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Case and dash insensitive completion.
@@ -17,12 +10,8 @@ HYPHEN_INSENSITIVE="true"
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# Don't mark git as dirty when untracked files exist.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 plugins=()
+# plugins=(git venv)
 
 # Move compinit cache files into generic cache location.
 export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST
@@ -44,7 +33,6 @@ alias hypr="hyprland"
 
 export IDEA_JDK=/usr/lib/jvm/jdk-jetbrains
 export PATH="/opt/homebrew/bin:$PATH"
-
 
 # ==== Custom Prompt (Recreating old Spaceship theme without Deps) ====
 is_remote() {
