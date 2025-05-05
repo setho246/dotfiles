@@ -8,7 +8,7 @@ CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 
 # Display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 plugins=()
 # plugins=(git venv)
@@ -30,6 +30,9 @@ alias python="python3"
 alias ctop='TERM="${TERM/#tmux/screen}" ctop'
 alias wodjs="docker run --rm -v $HOME/.ssh/:/home/node/.ssh -v ./mariadb-init:/usr/src/app/mariadb-init -u 1000:1000 -it eopts_dockby"
 alias hypr="hyprland"
+
+alias debug_on="DOCKER_XDEBUG_MODE=debug docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml up php -d"
+alias debug_off="DOCKER_XDEBUG_MODE=off docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml up php -d"
 
 export IDEA_JDK=/usr/lib/jvm/jdk-jetbrains
 export PATH="/opt/homebrew/bin:$PATH"

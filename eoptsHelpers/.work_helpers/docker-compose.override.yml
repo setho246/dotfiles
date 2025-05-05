@@ -7,7 +7,7 @@ services:
     environment:
       PHP_EXTENSIONS_DISABLE: ''
       PHP_XDEBUG: 1
-      PHP_XDEBUG_MODE: debug
+      PHP_XDEBUG_MODE: $DOCKER_XDEBUG_MODE
       PHP_IDE_CONFIG: serverName=my-ide
       PHP_XDEBUG_IDEKEY: "my-ide"
       PHP_XDEBUG_LOG: /tmp/php-xdebug.log
