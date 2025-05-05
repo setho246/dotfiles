@@ -5,7 +5,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/w
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
-export XDEBUG_CONFIG="idekey=my-ide
+export XDEBUG_CONFIG="idekey=my-ide"
 
 alias debug_on='export XDEBUG_CONFIG="idekey=my-ide"'
 alias debug_off='unset XDEBUG_CONFIG'
