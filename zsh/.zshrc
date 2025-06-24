@@ -28,14 +28,23 @@ alias dsd="docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-comp
 alias ddv="docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml  down"
 alias python="python3"
 alias ctop='TERM="${TERM/#tmux/screen}" ctop'
-alias wodjs="docker run --rm -v $HOME/.ssh/:/home/node/.ssh -v ./mariadb-init:/usr/src/app/mariadb-init -u 1000:1000 -it eopts_dockby"
 alias hypr="hyprland"
+
+wodjs() {
+	if [[ -d "./mariadb-init" ]] 
+	then
+		docker run --rm -v $HOME/.ssh/:/home/node/.ssh -v ./mariadb-init:/usr/src/app/mariadb-init -u 1000:1000 -it eopts_dockby
+	else
+		docker run --rm -v $HOME/.ssh/:/home/node/.ssh -u 1000:1000 -it eopts_dockby
+	fi
+}
+
 
 alias debug_on="DOCKER_XDEBUG_MODE=debug docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml up php -d"
 alias debug_off="DOCKER_XDEBUG_MODE=off docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml up php -d"
 
 export IDEA_JDK=/usr/lib/jvm/jdk-jetbrains
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/bin:/usr/local/bin/jetbrains-launchers:$PATH"
 
 # ==== Custom Prompt (Recreating old Spaceship theme without Deps) ====
 is_remote() {
