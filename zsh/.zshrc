@@ -4,7 +4,7 @@ export ZSH="$HOME/.config/oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Case and dash insensitive completion.
-CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 
 # Display red dots whilst waiting for completion.

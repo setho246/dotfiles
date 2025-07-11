@@ -1,0 +1,2 @@
+# Add 'P' as binding to push commits
+bind status P !git push origin
