@@ -12,8 +12,8 @@ if [ "$CHECKOUT_REASON" -eq 0 ]; then
 fi
 if [ -z "$BRANCH_NUM" ]; then
     echo "Emptying committemplate.txt"
-    echo "Warning! You're on the \"$BRANCH_NAME\" branch. Only commit work in this branch if absolutely necessary." > .git/committemplate.txt
+    echo -n "Warning! You're on the \"$BRANCH_NAME\" branch. Only commit work in this branch if absolutely necessary." > .git/committemplate.txt
 else
     echo "New template: $PROJ_SLUG#$BRANCH_NUM - "
-    echo "$PROJ_SLUG#$BRANCH_NUM - " > .git/committemplate.txt
+    echo -n "$PROJ_SLUG#$BRANCH_NUM - " > .git/committemplate.txt
 fi
