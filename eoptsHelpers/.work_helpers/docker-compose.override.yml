@@ -2,6 +2,7 @@ services:
   mariadb:
     ports:
       - "3306:3306"
+    volumes: !reset
 
   php:
     environment:
