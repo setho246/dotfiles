@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration #
 ######################
 
-alias dup="docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml up -d; docker compose logs -f php"
+alias dup='docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml up -d; docker compose logs -f $(docker compose ps --services | grep -v "^nginx" | tr "\n" " ")'
 alias dpb="docker compose exec -w '/var/www/html/drupal'  php bash"
 alias dsd="docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml stop"
 alias ddv="docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml  down"
