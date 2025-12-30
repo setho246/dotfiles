@@ -7,6 +7,7 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 export XDEBUG_CONFIG="idekey=my-ide"
 
+alias composer='XDEBUG_MODE=off composer'
 alias debug_on='export XDEBUG_CONFIG="idekey=my-ide"'
 alias debug_off='unset XDEBUG_CONFIG'
 alias cs='composer csf; composer cs'
