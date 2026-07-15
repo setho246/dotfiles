@@ -23,13 +23,14 @@ source $ZSH/oh-my-zsh.sh
 ######################
 
 alias dup='docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml up -d; docker compose logs -f $(docker compose ps --services | grep -v "^nginx" | tr "\n" " ")'
-alias dpb="docker compose exec -w '/var/www/html/drupal'  php bash"
+alias dpb="docker compose exec -w '/var/www/html'  php bash"
 alias dsd="docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml stop"
 alias ddv="docker compose -f ./docker-compose.yml -f ~/.work_helpers/docker-compose.override.yml  down"
 alias dc="docker compose"
 alias python="python3"
 alias ctop='TERM="${TERM/#tmux/screen}" ctop'
 alias hypr="hyprland"
+alias lg="lazygit"
 
 wodjs() {
 	if [[ -d "./mariadb-init" ]] 
