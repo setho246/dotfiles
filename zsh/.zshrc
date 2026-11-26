@@ -17,6 +17,7 @@ plugins=()
 export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST
 
 source $ZSH/oh-my-zsh.sh
+source <(kubectl completion zsh)
 
 ######################
 # User configuration #

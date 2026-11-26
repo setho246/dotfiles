@@ -8,3 +8,4 @@
 	path = ~/.config/git/config.eopts
 [core]
 	editor = vim
+	autocrlf = input
