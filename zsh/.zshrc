@@ -31,6 +31,7 @@ alias python="python3"
 alias ctop='TERM="${TERM/#tmux/screen}" ctop'
 alias hypr="hyprland"
 alias lg="lazygit"
+alias gmu='git stash --include-untracked -q && git checkout uat -q && git pull -q && git merge --no-edit -q - && git push -q && git checkout -q - && git stash pop -q && echo "Merged and pushed to uat, back on $(git branch --show-current)"'
 
 wodjs() {
 	if [[ -d "./mariadb-init" ]] 
